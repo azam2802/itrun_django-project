@@ -1,0 +1,25 @@
+{% include 'includes/header.html' %}
+{% load static %}
+
+<div class="Form">
+    <div class="block_form">
+        <h1>Регистрация</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input name="username" type="text" placeholder="Имя пользователя"><br>
+            <input name="email" type="email" placeholder="E-mail"><br />
+            <input name="phone" type="text" placeholder="Телефон"><br />
+            <input name="occupation" type="text" placeholder="Ваше направление в IT?"><br />
+            <input name="skills" type="text" placeholder="Скилл(языки, библиотеки которые вы знаете)"><br />
+            <label style="font-family: Gilroy; font-weight: 500" for="birth">Дата рождения</label><br />
+            <input name="birth" type="date" placeholder="Дата рождения"><br />
+            <input name="password" type="password" placeholder="Пароль"><br />
+            <input name="confirm_password" type="password" placeholder="Подвердите пароль"><br />
+            <label style="font-family: Gilroy; font-weight: 500" for="profile_image">Аватарка</label><br />
+            <input name="profile_image" type="file" placeholder="Аватарка"><br />
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>
+
+{% include 'includes/footer.html' %}

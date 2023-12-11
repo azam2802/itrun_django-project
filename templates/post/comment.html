@@ -1,0 +1,61 @@
+{% include 'includes/header.html' %}
+<div class="main bg-light comment_block">
+  <div>
+    <div class="card" style="width: 50rem;">
+      {% if postId.image %}
+      <img src="{{postId.image.url}}" class="card-img-top" alt="...">
+      {% else %}
+      <img src="https://icon-library.com/images/no-user-image-icon/no-user-image-icon-0.jpg" class="card-img-top"
+        alt="...">
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">{{postId.title}}</h5>
+        <p class="card-text">{{postId.description}}</p>
+        <form method="POST">
+          {% csrf_token %}
+          <input type="hidden" name='Like'>
+        </form>
+
+        <a href="#" class="btn btn-primary">Коментарии {{postId.post_comment.all.count}}</a>
+        {% if user.is_authenticated and request.user == postId.users %}
+        <a href="{% url 'post_update' postId.id %}" class="btn btn-primary">обновить</a>
+        <a href="{% url 'post_delete' postId.id %}" class="btn btn-primary">удалить</a>
+        {% endif %}
+        <span>{{postId.created}}</span> <br>
+        <span>{{postId.users}}</span>
+      </div>
+    </div>
+    <div class="comments_block">
+      {% for comment in postId.post_comment.all %}
+      <div class="card comment_card" style="width: 50rem; max-height: 250px;">
+        <div class="flex_block">
+          {% if comment.users.profile_image %}
+          <img src="{{comment.users.profile_image.url}}" class="card-img-top" style="width: 70px; padding: 5px;"
+            alt="...">
+          {% else %}
+          <img src="https://maski.trust-import.com/img/reviews-user-photo.jpg" class="card-img-top"
+            style="width: 70px; padding: 5px;" alt="...">
+          {% endif %}
+          <a href="{% url 'user_profile' comment.users.id %}" class="card-title">{{comment.users}}</a>
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{comment.text}}</p>
+          <p class="card-text">{{comment.created}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% if user.is_authenticated %}
+    <div class="form-floating line_form comment_form">
+      <form method='POST'>
+        {% csrf_token %}
+        <input type='hidden' name='comment' />
+        <input name='text' type='text' placeholder="Добавить комментарий" />
+        <button>Отправить</button>
+      </form>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% include 'includes/footer.html' %}

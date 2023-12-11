@@ -1,0 +1,172 @@
+{% include 'includes/header.html' %}
+{% load static %}
+<main>
+    <section id="Section-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <h1>
+                        Школа <b><i><span>{</span>программирования<span>}</span></i></b> для тех, кому нужны реальные
+                        навыки,
+                        а не просто сертификат
+                    </h1>
+                    <p>
+                        Пройдите тестирование, чтобы получить доступ к бесплатным вводным урокам
+                    </p>
+                    <a href="https://itrun.kg/#quiz284" target='__blank'><button>Пройти тестирование <img src="{% static 'img/arrowDiagonal.svg' %}" alt=""></button></a>
+                </div>
+                <div class="col-4">
+                    <img src="{% static 'img/section1-img.svg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Section-2">
+        <div class="container">
+            <h1 id="Section2__title">Обучение в <span>IT-RUN</span> – это удобно и результативно</h1>
+            <div class="cards">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="cards__card">
+                            <img src="{% static 'img/svg-gobbler 1.svg' %}" alt="">
+                            <h2>Огромное количество практики</h2>
+                            <p>Более 500 самостоятельных заданий и 20 полноценных больших проектов</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="cards__card">
+                            <img src="{% static 'img/svg-gobbler 2.svg' %}" alt="">
+                           <div class="card__text">
+                            <h2>Современные методики обучения</h2>
+                            <p>Спиральное обучение: 
+                                погружаемся в материал постепенно, виток за витком</p>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="cards__card">
+                            <img src="{% static 'img/svg-gobbler 3.svg' %}" alt="">
+                            <h2>Простое и понятное изложение</h2>
+                            <p>Вместо заумных терминов – примеры из реального мира</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="cards__card">
+                            <img src="{% static 'img/svg-gobbler 4.svg' %}" alt="">
+                            <h2>Гибкий график занятий</h2>
+                            <p>Учитесь в любое время в удобном для вас темпе</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row2">
+                    <div class="col-4">
+                        <div class="cards__card">
+                            <img src="{% static 'img/svg-gobbler 5.svg' %}" alt="">
+                            <h2>Прямая связь с опытными программистами</h2>
+                            <p>Задавайте вопросы 
+                                и отправляйте свой код на проверку</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="cards__card">
+                            <img src="{% static 'img/svg-gobbler 6.svg' %}" alt="">
+                            <h2>Оплата небольшими частями</h2>
+                            <p>Платите только за тот материал, который сейчас изучаете, 
+                                а не за весь курс сразу</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="cards__card">
+                            <img src="{% static 'img/svg-gobbler 7.svg' %}" alt="">
+                            <h2>Быстрый и легкий возврат</h2>
+                            <p>Если передумаете учиться –
+                                вернем деньги за 3 рабочих дня</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Section-3">
+        <div class="container">
+            <h1>Какие технологии вы изучите:</h1>
+            <div class="block block-rounded block_yellow">
+                <div class="row">
+                    <div class="col-6"><img src="{% static 'img\Section3_img.svg' %}" alt=""></div>
+                    <div class="col-6">
+                        <div class="skills">
+                            <div class="skill-inline skill-blue">Язык программирования Python</div><div class="skill-inline skill-orange">Сети</div>
+                        </div>
+                        <div class="skills">
+                            <div class="skill-inline skill-red">Базы данных</div><div class="skill-inline skill-green">Фреймворки Flask и Django</div>
+                        </div>
+                        <div class="skills">
+                            <div class="skill-inline skill-light_blue">Отладка и тестирование</div><div class="skill-inline skill-purple">Docker</div><div class="skill-inline skill-violet">Git</div>
+                        </div>
+                        <p>Это необходимый минимум для современного backend-разработчика</p>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Section-4">
+        <div class="container">
+            <div class="block">
+                <div class="row">
+                    <div class="col-4">
+                        <h1 class="num">01</h1>
+                        <h1 class="card-title">Весь материал разбит на небольшие уроки</h1>
+                        <p>Теория и практика подаются маленькими порциями. Так вам будет легче усваивать новые знания.</p>
+                    </div>
+                    <div class="col-4">
+                        <h1 class="num">02</h1>
+                        <h1 class="card-title">Обучение<br>через практику</h1>
+                        <p>Всё, что вы узнали, вы тут же начинаете применять на практике. Вы сразу видите результаты своего труда.</p>
+                    </div>
+                    <div class="col-4">
+                        <h1 class="num">03</h1>
+                        <h1 class="card-title">Нет ограничений<br>по времени</h1>
+                        <p>Можно совмещать учёбу с работой и другими делами. Не нужно выпрашивать академический отпуск, если пришлось сделать перерыв.</p>
+                    </div>
+                </div>
+                <div class="free-lesson">
+                    <a href="https://itrun.kg/#quiz284" target='__blank'><button>Начать обучение<img src="{% static 'img/arrowDiagonal.svg' %}" alt=""></button></a>
+                    <p>Попробуйте, первый урок бесплатно!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Section-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="block block_yellow"><img src="{% static 'img/Section5_1.svg' %}" alt=""></div>
+                </div>
+                <div class="col-8">
+                    <div class="block block_black block_text">
+                        <h1>Помощь и поддержка</h1>
+                        <br>
+                        <p>Если в процессе обучения возникнут сложности, вы всегда сможете задать вопрос своему наставнику.</p>
+                        <br>
+                        <p>Раз в несколько уроков вы будете получать большое задание, которое нужно будет сдавать на проверку код-ревьюеру. Он внимательно изучит ваш код, найдет ошибки и поможет вам стать лучше. </p>
+                    </div>
+                </div>
+
+                <div class="col-8">
+                    <div class="block block_black block_text">
+                        <h1>Методика обучения</h1>
+                        <br>
+                        <p>Весь учебный материал структурирован по принципу «спирального обучения». Сначала вы получаете базовые знания, а затем на каждом витке спирали углубляетесь в изученные темы, доводя их понимание до совершенства. Такой подход упрощает обучение и гарантирует, что вы не пропустите ничего важного.</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="block block_yellow"><img src="{% static 'img/Section5_2.svg' %}" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<a href="" class="onTop"></a>
+
+{% include 'includes/footer.html' %}

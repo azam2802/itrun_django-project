@@ -1,0 +1,11 @@
+{% include 'includes/header.html' %}
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input name="title" type="text" placeholder="Заголовок"><br>
+        <input name="description" type="text" placeholder="Описание"><br>
+        <input name="image" type="file" placeholder="Фото"><br/>
+        <button>Опубликовать</button>
+    </form>
+    
+{% include 'includes/footer.html' %}

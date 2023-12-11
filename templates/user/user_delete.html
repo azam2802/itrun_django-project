@@ -1,0 +1,17 @@
+{% include 'includes/header.html' %}
+
+<div class="container">
+    <div style="margin: 100px 0;">
+        {% if user.is_authenticated and request.user == user %}
+        <h1>Вы точно хотите удалить аккаунт?</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <button style="margin-bottom: 10px; margin-top:20px; font-size:30px;" type="submit" class="btn btn-danger">Да</button>
+        </form>
+        <button style="margin-bottom: 10px; font-size:30px;" type="submit" class="btn btn-success"><a style="text-decoration: none; color: #fff;" href="{% url 'index' %}">Нет</a></button>
+        {% else %}
+        <h1>У вас нет прав на удаление этого аккаунта!</h1>
+        {% endif %}
+    </div>
+</div>
+{% include 'includes/footer.html' %}

@@ -1,0 +1,31 @@
+{% include 'includes/header.html' %}
+{% load static %}
+
+<div class="News">
+    <h1>Новости в <span style="color: #f46040;">IT-RUN</span></h1>
+    {% if request.user.username == 'admin' %}
+    <a id="add_news-btn" href="{% url 'post_create' %}" __blank><button>Добавить новость</button></a>
+    {% endif %}
+    {% for i in posts %}
+    <div class="card" style="width: 30rem;">
+        {% if i.image %}
+        <img src="{{i.image.url}}" class="card-img-top" alt="...">
+        {% else %}
+        <img src="https://icon-library.com/images/no-user-image-icon/no-user-image-icon-0.jpg" class="card-img-top"
+            alt="...">
+        {% endif %}
+        <div class="card-body">
+            <a style="text-decoration: none;" href="{% url 'postId' i.id %}">
+                <h5 class="card-title">{{i.title}}</h5>
+            </a>
+            <p class="card-text">{{i.description | truncatewords:5}}</p>
+            <a href="comment.html" class="btn btn-primary">Коментарии</a>
+            <span>{{i.created}}</span><br>
+            <a style="text-decoration: none;"  href="{% url 'user_profile' i.users.id %}">@{{i.users}}</a><br>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+
+{% include 'includes/footer.html' %}
